@@ -38,10 +38,11 @@ class EmailNatorClient:
         self.base_url = "https://www.emailnator.com"
         self.session = requests.Session()
         self.xsrf_token = None
-        self._initialize_session()
-
+        
         self.logger = logging.getLogger(f"{__name__}.EmailNatorClient")
         self.logger.setLevel(log_level)
+        
+        self._initialize_session()
 
     def _initialize_session(self):
         try:
